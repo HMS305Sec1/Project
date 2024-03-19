@@ -11,6 +11,7 @@
 - Mahdi AbdulHussain Hasan 202009297
 - Abdulaziz Taha Alkubaisi 20198137
 - Ali Housam AlHalaki 202103108
+- Abdullah Shami Salem
 
 **Based on our previous ITSE 302 Hotel Management System We have chosen the following use cases to work on:**
 
