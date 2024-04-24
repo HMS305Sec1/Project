@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Register_Login {
+public class Register {
 
     static HashMap<String, String> users = new HashMap<String, String>();
 
