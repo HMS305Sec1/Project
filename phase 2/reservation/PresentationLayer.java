@@ -18,10 +18,6 @@ public class PresentationLayer {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter room type to search: (Single/Double/Suite)");
         String roomType = scanner.nextLine();
-        if (!isValidType(roomType)) {
-            System.out.println("Invalid room type. Please enter Single, Double, or Suite.");
-            return;
-        }
 
         Room availableRoom = roomManager.searchRoom(roomType);
         if (availableRoom != null) {
@@ -29,11 +25,6 @@ public class PresentationLayer {
         } else {
             System.out.println("No available room of type " + roomType + " found.");
         }
-    }
-
-    // Method to check if type is valid
-    public boolean isValidType(String roomType) {
-        return roomType.equalsIgnoreCase("Single") || roomType.equalsIgnoreCase("Double") || roomType.equalsIgnoreCase("Suite");
     }
 
     // Method to handle reservation
@@ -65,7 +56,7 @@ public class PresentationLayer {
     }
 
     // Method to initialize rooms
-    private static List<Room> initializeRooms() {
+    public static List<Room> initializeRooms() {
         List<Room> rooms = new ArrayList<>();
         rooms.add(new Room(1, "Single"));
         rooms.add(new Room(2, "Double"));
@@ -77,7 +68,7 @@ public class PresentationLayer {
     }
 
     // Method to initialize reservations
-    private static List<Reservation> initializeReservations() {
+    public static List<Reservation> initializeReservations() {
         return new ArrayList<>(); // Initially no reservations
     }
 
