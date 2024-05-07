@@ -4,7 +4,7 @@ public class FillForm {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("--- Hotel Reservation Form ---");
+        System.out.println("--- Hotel Form ---");
         System.out.print("Name (A-Z letters only): ");
         String name = readValidName(scanner);
 
@@ -13,7 +13,7 @@ public class FillForm {
         scanner.nextLine(); // Consume newline character
 
         System.out.print("Nationality: ");
-        String nationality = scanner.nextLine();
+        String nationality = readValidNationality(scanner);
 
         System.out.println("Hotel Star Preference:");
         System.out.println("[1] 1 Star");
@@ -69,11 +69,11 @@ public class FillForm {
                 roomPreference= "Other";
                 break;
             default:
-                roomPreference = "Invalid Choice"
+                roomPreference = "Invalid Choice";
         }
-
+        
         // Output the collected information
-        System.out.println("\n--- Reservation Summary ---");
+        System.out.println("\n--- Form Summary ---");
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
         System.out.println("Nationality: " + nationality);
@@ -93,5 +93,15 @@ public class FillForm {
             }
         } while (!name.matches("[a-zA-Z]+"));
         return name;
+    }
+    private static String readValidNationality(Scanner scanner) {
+        String nationality;
+        do {
+            nationality = scanner.nextLine();
+            if (!nationality.matches("[a-zA-Z]+")) {
+                System.out.print("Please enter a valid Nationality (A-Z letters only): ");
+            }
+        } while (!nationality.matches("[a-zA-Z]+"));
+        return nationality;
     }
 }
