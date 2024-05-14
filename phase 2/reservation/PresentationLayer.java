@@ -19,6 +19,11 @@ public class PresentationLayer {
         System.out.println("Enter room type to search: (Single/Double/Suite)");
         String roomType = scanner.nextLine();
 
+        if (!roomType.equals("Single") && !roomType.equals("Double") && !roomType.equals("Suite")) {
+            System.out.println("Invalid room type. Please enter Single, Double, or Suite.");
+            return;
+        }
+
         Room availableRoom = roomManager.searchRoom(roomType);
         if (availableRoom != null) {
             System.out.println("Room found! Room ID: " + availableRoom.getRoomId());
@@ -55,6 +60,21 @@ public class PresentationLayer {
         }
     }
 
+    public void viewReservations() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter guest name: ");
+        String guestName = scanner.nextLine();
+        List<Reservation> reservations = reservationManager.getReservationsByGuestName(guestName);
+        if (reservations.isEmpty()) {
+            System.out.println("No reservations found for guest " + guestName);
+        } else {
+            System.out.println("Reservations for guest " + guestName + ":");
+            for (Reservation reservation : reservations) {
+                System.out.println("Room ID: " + reservation.getRoom().getRoomId() + ", Room Type: " + reservation.getRoom().getRoomType());
+            }
+        }
+    }
+
     // Method to initialize rooms
     public static List<Room> initializeRooms() {
         List<Room> rooms = new ArrayList<>();
@@ -79,6 +99,7 @@ public class PresentationLayer {
         do {
             System.out.println("\n1. Search Room");
             System.out.println("2. Make Reservation");
+            System.out.println("3. View Reservations");
             System.out.println("0. Exit");
             System.out.println("Enter your choice: ");
             choice = scanner.nextInt();
@@ -90,6 +111,9 @@ public class PresentationLayer {
                     break;
                 case 2:
                     makeReservation();
+                    break;
+                case 3:
+                    viewReservations();
                     break;
                 case 0:
                     System.out.println("Exiting...");
