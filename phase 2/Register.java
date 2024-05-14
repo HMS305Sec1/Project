@@ -32,7 +32,8 @@ public class Register {
     }
 
     static void registerUser(Scanner scanner) {
-        System.out.println("Enter your username:"); /*  validate the length and password complexity */
+        // TODO: Add username and password validation
+        System.out.println("Enter your username:");
         String username = scanner.nextLine();
         System.out.println("Enter your password:");
         String password = scanner.nextLine();
@@ -45,6 +46,7 @@ public class Register {
     }
 
     static void loginUser(Scanner scanner) {
+        // TODO: Add username and password validation
         System.out.println("Enter your username:");
         String username = scanner.nextLine();
         System.out.println("Enter your password:");

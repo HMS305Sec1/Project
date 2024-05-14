@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 public class FillForm {
     public static void main(String[] args) {
+        // TODO: Make the form constantly running and ask the user if they want to fill another form
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("--- Hotel Form ---");
         System.out.print("Name (A-Z letters only): "); /* add without space and only letters */
         String name = readValidName(scanner);
 
+        // TODO: Add age validation
         System.out.print("Age: ");
         int age = scanner.nextInt();
         scanner.nextLine(); // Consume newline character
@@ -27,6 +29,7 @@ public class FillForm {
         int starPreference = scanner.nextInt();
         scanner.nextLine(); // Consume newline character
 
+        // TODO: shorten switch case
         String starPreferenceText = "";
         switch (starPreference) {
             case 1:
@@ -56,6 +59,7 @@ public class FillForm {
         System.out.print("Enter your choice (1-4): ");
         int roomChoice = scanner.nextInt();
 
+        // TODO: shorten switch case
         String roomPreference = "";
         switch (roomChoice){
             case 1:
@@ -73,7 +77,7 @@ public class FillForm {
             default:
                 roomPreference = "Invalid Choice";
         }
-        
+
         // Output the collected information
         System.out.println("\n--- Form Summary ---");
         System.out.println("Name: " + name);
