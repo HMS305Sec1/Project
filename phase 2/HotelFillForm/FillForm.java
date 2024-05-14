@@ -1,3 +1,5 @@
+package HotelFillForm;
+
 import java.util.Scanner;
 
 public class FillForm {
@@ -84,7 +86,7 @@ public class FillForm {
         scanner.close();
     }
 
-    private static String readValidName(Scanner scanner) {
+    static String readValidName(Scanner scanner) {
         String name;
         do {
             name = scanner.nextLine();
@@ -94,7 +96,7 @@ public class FillForm {
         } while (!name.matches("[a-zA-Z]+"));
         return name;
     }
-    private static String readValidNationality(Scanner scanner) {
+    static String readValidNationality(Scanner scanner) {
         String nationality;
         do {
             nationality = scanner.nextLine();

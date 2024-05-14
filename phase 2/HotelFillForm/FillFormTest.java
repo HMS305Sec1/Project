@@ -1,3 +1,5 @@
+package HotelFillForm;
+
 import org.junit.jupiter.api.Test;
 import org.opentest4j.MultipleFailuresError;
 import java.io.ByteArrayInputStream;
