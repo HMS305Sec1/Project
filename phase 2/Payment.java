@@ -1,6 +1,6 @@
-import java.util.Scanner;
-//Reviewed by Abdullah Shami
-public class Payment {
+import java.util.*;
+
+public class PaymentPage {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -11,7 +11,7 @@ public class Payment {
         System.out.println("2. PayPal");
         System.out.println("3. Benefit Pay");
         int choice = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine();
 
         switch (choice) {
             case 1:
@@ -31,21 +31,38 @@ public class Payment {
     }
 
     public static void processCreditCardPayment(Scanner scanner) {
-        System.out.println("Enter credit card number:");
-        /*
-        1-As we know credit card has maximum of 16 digits
-        2-Credit card contain only digit so using INT
-        3-Adding a method to check if the credit card is Visa or Mastercard by checking the first 4 digits.
-        */
-        String creditCardNumber = scanner.nextLine();
-        System.out.println("Enter expiration date:");
-        String expirationDate = scanner.nextLine();
-        System.out.println("Enter CVV:");
-        /*
-        1-CVV is 3 digit code.
-        2-CVV contain only digit so using INT better than String.
-        */
-        String cvv = scanner.nextLine();
+        long creditCardNumber;
+        do {
+            System.out.println("Enter credit card number (16 digits):");
+            creditCardNumber = scanner.nextLong();
+            scanner.nextLine(); 
+
+         
+            if (String.valueOf(creditCardNumber).length() != 16) {
+                System.out.println("Invalid credit card number. Please enter exactly 16 digits.");
+            }
+        } while (String.valueOf(creditCardNumber).length() != 16);
+
+        String expirationDate;
+        do {
+            System.out.println("Enter expiration date (MM/YY):");
+            expirationDate = scanner.nextLine();
+
+          
+            if (!expirationDate.matches("^(0[1-9]|1[0-2])/[0-9]{2}$")) {
+                System.out.println("Invalid expiration date format. Please enter in MM/YY format.");
+            }
+        } while (!expirationDate.matches("^(0[1-9]|1[0-2])/[0-9]{2}$"));
+
+        System.out.println("Enter CVV (3 digits):");
+        int cvv = scanner.nextInt();
+        scanner.nextLine();
+
+        
+        if (String.valueOf(cvv).length() != 3) {
+            System.out.println("Invalid CVV. Please enter exactly 3 digits.");
+            return; 
+        }
 
         System.out.println("Payment successful with credit card.");
     }
