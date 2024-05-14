@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//Reviewed by Abdullah Shami
 public class Payment {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -32,10 +32,19 @@ public class Payment {
 
     public static void processCreditCardPayment(Scanner scanner) {
         System.out.println("Enter credit card number:");
+        /*
+        1-As we know credit card has maximum of 16 digits
+        2-Credit card contain only digit so using INT
+        3-Adding a method to check if the credit card is Visa or Mastercard by checking the first 4 digits.
+        */
         String creditCardNumber = scanner.nextLine();
         System.out.println("Enter expiration date:");
         String expirationDate = scanner.nextLine();
         System.out.println("Enter CVV:");
+        /*
+        1-CVV is 3 digit code.
+        2-CVV contain only digit so using INT better than String.
+        */
         String cvv = scanner.nextLine();
 
         System.out.println("Payment successful with credit card.");
