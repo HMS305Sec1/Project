@@ -5,7 +5,7 @@ public class FillForm {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("--- Hotel Form ---");
-        System.out.print("Name (A-Z letters only): ");
+        System.out.print("Name (A-Z letters only): "); /* add without space and only letters */
         String name = readValidName(scanner);
 
         System.out.print("Age: ");
