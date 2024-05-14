@@ -32,7 +32,7 @@ public class Register {
     }
 
     static void registerUser(Scanner scanner) {
-        System.out.println("Enter your username:");
+        System.out.println("Enter your username:"); /* Input validtion */
         String username = scanner.nextLine();
         System.out.println("Enter your password:");
         String password = scanner.nextLine();
