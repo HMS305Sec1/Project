@@ -31,14 +31,14 @@ class PaymentPageTest {
 
         PaymentPage.main(new String[]{});
 
-        assertEquals("Welcome to the Payment Page\r\n" + //
-                        "Select a payment method:\r\n" + //
-                        "1. Credit Card\r\n" + //
-                        "2. PayPal\r\n" + //
-                        "3. Benefit Pay\r\n" + //
-                        "Enter credit card number (16 digits):\r\n" + //
-                        "Enter expiration date (MM/YY):\r\n" + //
-                        "Enter CVV (3 digits):\r\n" + //
+        assertEquals("Welcome to the Payment Page\r\n" + 
+                        "Select a payment method:\r\n" + 
+                        "1. Credit Card\r\n" + 
+                        "2. PayPal\r\n" + 
+                        "3. Benefit Pay\r\n" + 
+                        "Enter credit card number (16 digits):\r\n" + 
+                        "Enter expiration date (MM/YY):\r\n" + 
+                        "Enter CVV (3 digits):\r\n" + 
                         "Payment successful with credit card.", outContent.toString().trim());
     }
 
