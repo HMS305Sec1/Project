@@ -7,8 +7,6 @@ public class RegisterTest {
     public void testRegisterUser() {
         Register register = new Register();
         register.runRegistrationSystem(1);
-
-
     }
 
     @Test
