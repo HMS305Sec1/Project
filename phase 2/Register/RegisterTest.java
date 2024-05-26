@@ -1,6 +1,5 @@
 package Register;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
 public class RegisterTest {
 
@@ -17,7 +16,5 @@ public class RegisterTest {
         Register register = new Register();
         register.registerUser("JohnDoe", "password123");
         register.runRegistrationSystem(2);
-
-
     }
 }

@@ -21,10 +21,10 @@ public class Register {
             scanner.nextLine();
             switch (choice) {
                 case 1:
-                    registerUser(scanner);
+                    UserRegistration.registerUser(scanner);
                     break;
                 case 2:
-                    loginUser(scanner);
+                    UserLogin.loginUser(scanner);
                     break;
                 case 3:
                     break;
@@ -89,7 +89,7 @@ public class UserRegistration {
 
 
 public class UserLogin {
-    private static Map<String, String> users = new HashMap<>();
+    private static HashMap<String, String> users = new HashMap<>();
 
     static {
         users.put("user1", "Password1!");
